@@ -221,15 +221,24 @@
       </then>
     </if>
 
-    <!-- delete the configuration, sample index, logs and cache data -->
-    <delete dir="${srcdir}/solr/alphabetical_browse" includeemptydirs="true" failonerror="true" />
-    <delete dir="${srcdir}/solr/authority/index" includeemptydirs="true" failonerror="true" />
-    <delete dir="${srcdir}/solr/authority/tlog" includeemptydirs="true" failonerror="true" />
-    <delete dir="${srcdir}/solr/biblio/index" includeemptydirs="true" failonerror="true" />
-    <delete dir="${srcdir}/solr/biblio/tlog" includeemptydirs="true" failonerror="true" />
-    <delete dir="${srcdir}/solr/biblio/spellchecker" includeemptydirs="true" failonerror="true" />
-    <delete dir="${srcdir}/solr/biblio/spellShingle" includeemptydirs="true" failonerror="true" />
-    <delete file="${srcdir}/import/solrmarc.log" failonerror="true" />
+    <if>
+      <istrue value="${startsolr}" />
+      <then>
+
+	    <!-- delete the configuration, sample index, logs and cache data -->
+	    <delete dir="${srcdir}/solr/alphabetical_browse" includeemptydirs="true" failonerror="true" />
+	    <delete dir="${srcdir}/solr/authority/index" includeemptydirs="true" failonerror="true" />
+	    <delete dir="${srcdir}/solr/authority/tlog" includeemptydirs="true" failonerror="true" />
+	    <delete dir="${srcdir}/solr/biblio/index" includeemptydirs="true" failonerror="true" />
+	    <delete dir="${srcdir}/solr/biblio/tlog" includeemptydirs="true" failonerror="true" />
+	    <delete dir="${srcdir}/solr/biblio/spellchecker" includeemptydirs="true" failonerror="true" />
+	    <delete dir="${srcdir}/solr/biblio/spellShingle" includeemptydirs="true" failonerror="true" />
+	    <delete file="${srcdir}/import/solrmarc.log" failonerror="true" />
+      </then>      	
+    </if>
+
+
+
     <delete dir="${srcdir}/local" includeemptydirs="true" failonerror="true" />
     <exec command="git reset --hard" />
   </target>
