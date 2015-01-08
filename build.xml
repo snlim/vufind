@@ -209,21 +209,23 @@
       </else>
     </if>
 
-    <!-- stop Solr -->
-    <exec command="VUFIND_HOME=${srcdir} VUFIND_LOCAL_DIR=${srcdir}/local JETTY_PID=${srcdir}/local/vufindtest.pid ${srcdir}/vufind.sh stop" outputProperty="LASTOUTPUT" />
-    <echo message="${LASTOUTPUT}" />
-
-    <!-- run extra cleanup action, if any -->
-    <if>
-      <istrue value="${extra_shutdown_cleanup}" />
-      <then>
-        <exec command="VUFIND_HOME=${srcdir} VUFIND_LOCAL_DIR=${srcdir}/local ${extra_shutdown_cleanup}" />
-      </then>
-    </if>
 
     <if>
       <istrue value="${startsolr}" />
       <then>
+        <!-- stop Solr -->
+        <exec command="VUFIND_HOME=${srcdir} VUFIND_LOCAL_DIR=${srcdir}/local JETTY_PID=${srcdir}/local/vufindtest.pid ${srcdir}/vufind.sh stop" outputProperty="LASTOUTPUT" />
+        <echo message="${LASTOUTPUT}" />
+
+        <!-- run extra cleanup action, if any -->
+        <if>
+          <istrue value="${extra_shutdown_cleanup}" />
+          <then>
+            <exec command="VUFIND_HOME=${srcdir} VUFIND_LOCAL_DIR=${srcdir}/local ${extra_shutdown_cleanup}" />
+          </then>
+        </if>
+
+    
 
 	    <!-- delete the configuration, sample index, logs and cache data -->
 	    <delete dir="${srcdir}/solr/alphabetical_browse" includeemptydirs="true" failonerror="true" />
