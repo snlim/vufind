@@ -313,7 +313,7 @@ class Integral extends AbstractBase implements LoggerAwareInterface, \VuFindHttp
      * number, barcode.
      * @SuppressWarnings(PHPMD.UnusedFormalParameter)
      */
-    public function getHolding($id, $patron = false)
+    public function getHolding($id, array $patron = null)
     {
         $this->debug("Entering getHolding");
 
