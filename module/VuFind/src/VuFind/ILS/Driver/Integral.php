@@ -317,7 +317,7 @@ class Integral extends AbstractBase implements LoggerAwareInterface, \VuFindHttp
     {
         $this->debug("Entering getHolding");
 
-	 /*
+	 
 	 $holding = array();
 	 $holding[0] = array(
                 'id'                => $id,
@@ -357,8 +357,9 @@ class Integral extends AbstractBase implements LoggerAwareInterface, \VuFindHttp
             );
 
         return $holding;
-	*/ 
+	  
 
+	/*
 	if ($patron['cat_username'] == null || $patron['cat_username'] == ''){
             $patron['cat_username'] = $this->config['IntegralMystic']['username'];
 
@@ -377,7 +378,7 @@ class Integral extends AbstractBase implements LoggerAwareInterface, \VuFindHttp
         $this->debug("Leaving getHolding");
         return $holding ;
 	 
-
+	*/
 
 	 //return $this->getStatus($id);
 
