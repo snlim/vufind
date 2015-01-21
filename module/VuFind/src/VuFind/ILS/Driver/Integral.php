@@ -245,9 +245,9 @@ class Integral extends AbstractBase implements LoggerAwareInterface, \VuFindHttp
      */
     public function getStatuses($ids)
     {
-	 //$this->debug("Entering getStatuses");
+	//$this->debug("Entering getStatuses");
 	 
-        $urlParamsJson = "http://localhost/vufind/public/data/getStatus.json";
+        $urlParamsJson = "http://localhost/vufind/data/getStatuses.json";
         $json = $this->getJsonArray($urlParamsJson);
         return $json;
 	 

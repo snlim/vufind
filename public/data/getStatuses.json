@@ -2,8 +2,8 @@
     [
         {
             "availability": 0,
-            "id": "9730386",
-            "status": "Checked holdXXX",
+            "id": "testdeweybrowse",
+            "status": "Checked holdX",
             "location": "USM Library 2",
             "reserve": "Y",
             "callnumber": "A1234.568X",
@@ -13,22 +13,22 @@
         },
 	 {
             "availability": 0,
-            "id": "9730386",
+            "id": "testdeweybrowse",
             "status": "Missing",
             "location": "USM Library 2",
             "reserve": "Y",
             "callnumber": "A1234.568X",
             "duedate": "",
             "number": 1,
-	     "item_id": "0000001"
+	     "item_id": "0000002"
         }
 
     ],
     [
         {
             "availability": 1,
-            "id": "9245337",
-            "status": "XAvailable",
+            "id": "testsample1",
+            "status": "Available",
             "location": "USM Library",
             "reserve": "Y",
             "callnumber": "XA1234.568",
