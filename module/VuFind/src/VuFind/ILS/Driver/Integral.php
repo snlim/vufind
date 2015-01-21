@@ -209,7 +209,7 @@ class Integral extends AbstractBase implements LoggerAwareInterface, \VuFindHttp
     {   
  	 $holding = array();
         
-        $holding[0] = array('availability' => 1,
+        $holding[0] = array('availability' => true,
                            'status' => 'Lost',
                            'location' => '3rd Floor Main Library',
                            'reserve' => 'Yes',
@@ -219,7 +219,7 @@ class Integral extends AbstractBase implements LoggerAwareInterface, \VuFindHttp
 			      'item_id' => 'aaaaaaa',
 			      'summary' => 'this is summary');
 
-	$holding[1] = array('availability' => 1,
+	$holding[1] = array('availability' => true,
                            'status' => 'Missing',
                            'location' => 'Ground Floor Main Library',
                            'reserve' => 'Yes',
@@ -323,7 +323,7 @@ class Integral extends AbstractBase implements LoggerAwareInterface, \VuFindHttp
                 'id'                => $id,
                 'item_id'           => 'VUFIND0001',
                 'availability'      => true,
-                'status'            => 'AvailableYY',
+                'status'            => 'Available',
                 'location'          => 'Campus A',
                 'reserve'           => 'Y',
                 'callnumber'        => 'A.265.265',
@@ -344,7 +344,7 @@ class Integral extends AbstractBase implements LoggerAwareInterface, \VuFindHttp
                 'item_id'           => 'VUFIND0002',
                 'availability'      => true,
                 'status'            => 'circulated',
-                'location'          => 'Campus B',
+                'location'          => 'Campus C',
                 'reserve'           => 'N',
                 'callnumber'        => 'z30-call-no',
                 'duedate'           => '05/05/2014 00:00:00',  
@@ -356,6 +356,7 @@ class Integral extends AbstractBase implements LoggerAwareInterface, \VuFindHttp
                 
             );
 
+	
         return $holding;
 	  
 
