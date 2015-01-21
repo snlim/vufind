@@ -246,13 +246,13 @@ class Integral extends AbstractBase implements LoggerAwareInterface, \VuFindHttp
     public function getStatuses($ids)
     {
 	 //$this->debug("Entering getStatuses");
-	 /*
-        $urlParamsJson = "http://limsyenie:limsyenie@vufind.myriadeas.com.my/vufind/data/statuses/itemInformation.json";
+	 
+        $urlParamsJson = "http://localhost/vufind/public/data/getStatus.json";
         $json = $this->getJsonArray($urlParamsJson);
         return $json;
-	 */
-
-        
+	 
+	
+        /*
 	 $integralUrl = $this->config['IntegralMystic']['vufindRestUrl'];        
         $username = $this->config['IntegralMystic']['username'];
 	 $password = $this->config['IntegralMystic']['password'];	
@@ -269,7 +269,7 @@ class Integral extends AbstractBase implements LoggerAwareInterface, \VuFindHttp
             $status[] = $this->getStatus($id);
         }
         return $status;
-        
+        */
 
         
         
