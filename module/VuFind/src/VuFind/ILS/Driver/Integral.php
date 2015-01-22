@@ -331,10 +331,10 @@ class Integral extends AbstractBase implements LoggerAwareInterface, \VuFindHttp
                 'returndate'        => false, 
                 'number'            => null,   
                 'requests_placed'   => null,
-                'notes'		 => array("1","2","3"),
-                'summary'		 => array("a","b","c"),
-                'indexes'		 => array("5","6","7"),
-                'supplements'	 => array("a","b","c"),
+                'notes'		 => array("The status of the item is Available. You may get the item from the shelf."),
+                'summary'		 => [],
+                'indexes'		 => [],
+                'supplements'	 => null,
                 'barcode'		 => 'XXXXXXX',              
                 'is_holdable'       => true                
             );
@@ -345,9 +345,26 @@ class Integral extends AbstractBase implements LoggerAwareInterface, \VuFindHttp
                 'availability'      => true,
                 'status'            => 'circulated',
                 'location'          => 'Campus C',
-                'reserve'           => 'N',
+                'reserve'           => 'Y',
                 'callnumber'        => 'z30-call-no',
                 'duedate'           => '05/05/2014 00:00:00',  
+		  'number'		 => 2,
+                'barcode'		 => 'XXXXX',              
+                'notes'             => null,
+                'is_holdable'       => true,
+                'holdtype'          => 'recall'
+                
+            );
+
+	   $holding[2] = array(
+                'id'                => $id,
+                'item_id'           => 'VUFIND0003',
+                'availability'      => true,
+                'status'            => 'circulated',
+                'location'          => 'Campus C',
+                'reserve'           => 'N',
+                'callnumber'        => 'z30-call-no',
+                'duedate'           => '06/06/2014 00:00:00',  
 		  'number'		 => 2,
                 'barcode'		 => 'XXXXX',              
                 'notes'             => null,
