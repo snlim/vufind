@@ -245,57 +245,40 @@ class Integral extends AbstractBase implements LoggerAwareInterface, \VuFindHttp
      */
     public function getStatuses($ids)
     {
+	//mock data
 	//$this->debug("Entering getStatuses");
-	 
+	/* 
         $urlParamsJson = "http://localhost/vufind/data/getStatuses.json";
         $json = $this->getJsonArray($urlParamsJson);
         return $json;
-	 
+	*/ 
 	
-        /*
-	 $integralUrl = $this->config['IntegralMystic']['vufindRestUrl'];        
-        $username = $this->config['IntegralMystic']['username'];
-	 $password = $this->config['IntegralMystic']['password'];	
-        $urlParams = "http://".$username.":".$password."@".$integralUrl."/getStatuses";
-	 $body = $ids;
+        
+	
+        //$username = $this->config['IntegralMystic']['username'];
+	//$password = $this->config['IntegralMystic']['password'];	
+        //$urlParams = "http://".$username.":".$password."@".$integralUrl."/accession/getStatuses";
+	//mysticUrl = localhost:8080/integral-mystic
+        //vufindRestUrl = localhost:8080/integral-mystic/rest/services
+
+        $integralUrl = $this->config['IntegralMystic']['vufindRestUrl'];        
+	$urlParams = "http://".$integralUrl."/accession/getStatuses";
+	$body = $ids;
         $items = $this->postJsonArrayNoComments($urlParams, $ids);
+	//$this->debug(var_dump($items));
         return $items;
      	    
 
-        //$this->debug($urlParams);
+        
    
+	/*
         $status = array();
         foreach ($idList as $id) {
             $status[] = $this->getStatus($id);
         }
         return $status;
-        */
-
-        
-        
-
-
-        /*$items = array();
-        foreach ($ids as $id) {
-            $holding = array();
-            $holding[] = array('availability' => 1,
-                               'id' => $id,
-                               'status' => 'Available',
-                               'location' => '3rd Floor Main Library',
-                               'reserve' => 'No',
-                               'callnumber' => 'A1234.568',
-                               'duedate' => '',
-                               'number' => 1);
-            $items[] = $holding;
-        }*/
-        //$this->debug(var_dump($items));
-        //$this->debug(var_dump($arrayResponse));
-
-        //$this->debug(var_dump($items));
-
-
-	 
-
+   	*/     
+       
 
     }
 
@@ -315,14 +298,15 @@ class Integral extends AbstractBase implements LoggerAwareInterface, \VuFindHttp
      */
     public function getHolding($id, array $patron = null)
     {
-        $this->debug("Entering getHolding");
+         $this->debug("Entering getHolding");
 
+	 //mock data
 	 
 	 $holding = array();
 	 $holding[0] = array(
                 'id'                => $id,
                 'item_id'           => 'VUFIND0001',
-                'availability'      => true,
+                'availability'      => false,
                 'status'            => 'Available',
                 'location'          => 'Campus A',
                 'reserve'           => 'Y',
@@ -373,33 +357,56 @@ class Integral extends AbstractBase implements LoggerAwareInterface, \VuFindHttp
                 
             );
 
+	    $holding[2] = array(
+                'id'                => '0000000001',
+                'item_id'           => '0000000001',
+                'availability'      => false,
+                'status'            => 'NEW',
+                'location'          => null,
+                'reserve'           => null,
+                'callnumber'        => null,
+                'duedate'           => null,
+		'returnDate'	    => null,  
+		'number'	    => null,
+                'requests_placed'   => null,
+                'barcode'	    => 'XXXXX',              
+                'notes'             => null,
+		'summary'	    => null,
+		'supplements'	    => null,
+		'indexes'	    => null,
+                'is_holdable'       => null,
+                'holdtype'          => null,
+		'holdOverride'	    => null
+                
+            );
+
+	    
+	    $this->debug(var_dump($holding));
+	    
+	 
 	
-        return $holding;
+       
 	  
 
-	/*
-	if ($patron['cat_username'] == null || $patron['cat_username'] == ''){
-            $patron['cat_username'] = $this->config['IntegralMystic']['username'];
-
-	}
+	//$username = $this->config['IntegralMystic']['username'];
+	//$password = $this->config['IntegralMystic']['password'];	
+        //$urlParams = "http://".$username.":".$password."@".$integralUrl."/accession/getStatuses";
+	//mysticUrl = localhost:8080/integral-mystic
+        //vufindRestUrl = localhost:8080/integral-mystic/rest/services
 	
+	/*
         $integralUrl = $this->config['IntegralMystic']['vufindRestUrl'];        
-	 $username = $this->config['IntegralMystic']['username'];
-	 $password = $this->config['IntegralMystic']['password'];
-	 $urlParams = "http://".$username.":".$password."@".$integralUrl."/".$patron['cat_username']."/".$id."/holding";
-
-        //$urlParams = "http://".$patron['cat_username'].":".$patron['cat_password']."@".$integralUrl."/".$patron['cat_username']."/".$id."/holding";
+	$urlParams = "http://".$integralUrl."/accession/".$id."/holding";
+	$holding = $this->getJsonArray($urlParams);
         $this->debug($urlParams);
-        //$this->debug(var_dump($patron));
-        $holding = $this->getJsonArray($urlParams);
-        //$this->debug(var_dump($holding));
-        $this->debug("Leaving getHolding");
-        return $holding ;
-	 
-	*/
+	$this->debug(var_dump($holding));
+        */
 
-	 //return $this->getStatus($id);
 
+
+	$this->debug("Leaving getHolding");
+	return $holding; 
+ 	
 
     }
 
