@@ -1,6 +1,29 @@
 [
     [
         {
+            "availability": false,
+            "id": "0000000001",
+            "status": "Checked outK",
+            "location": null,
+            "reserve": null,
+            "callnumber": null,
+	     "item_id": "0000001"
+        },
+	 {
+            "availability": 0,
+            "id": "0000000001",
+            "status": "Missing",
+            "location": "USM Library 2",
+            "reserve": "Y",
+            "callnumber": "A1234.568X",
+            "duedate": "",
+            "number": 1,
+	     "item_id": "0000002"
+        }
+
+    ],
+    [
+        {
             "availability": 0,
             "id": "testdeweybrowse",
             "status": "Checked holdX",

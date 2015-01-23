@@ -180,9 +180,9 @@ class Integral extends AbstractBase implements LoggerAwareInterface, \VuFindHttp
 	     
             $client->setHeaders($http_headers);	     
 	     $client->setRawBody(json_encode($body));
-	     $this->debug("get from ".json_encode($body));
+	     //$this->debug("get from ".json_encode($body));
             $result = $client->send();
-            $this->debug("get result");
+            //$this->debug("get result");
 	     if (!$result->isSuccess()) {           
                 throw new ILSException('Problem with RESTful API.');
 	     }
@@ -260,7 +260,7 @@ class Integral extends AbstractBase implements LoggerAwareInterface, \VuFindHttp
         //$urlParams = "http://".$username.":".$password."@".$integralUrl."/accession/getStatuses";
 	//mysticUrl = localhost:8080/integral-mystic
         //vufindRestUrl = localhost:8080/integral-mystic/rest/services
-
+	
         $integralUrl = $this->config['IntegralMystic']['vufindRestUrl'];        
 	$urlParams = "http://".$integralUrl."/accession/getStatuses";
 	$body = $ids;
@@ -301,7 +301,7 @@ class Integral extends AbstractBase implements LoggerAwareInterface, \VuFindHttp
          $this->debug("Entering getHolding");
 
 	 //mock data
-	 
+	 /*	 
 	 $holding = array();
 	 $holding[0] = array(
                 'id'                => $id,
@@ -383,7 +383,7 @@ class Integral extends AbstractBase implements LoggerAwareInterface, \VuFindHttp
 	    
 	    $this->debug(var_dump($holding));
 	    
-	 
+	 */
 	
        
 	  
@@ -394,13 +394,13 @@ class Integral extends AbstractBase implements LoggerAwareInterface, \VuFindHttp
 	//mysticUrl = localhost:8080/integral-mystic
         //vufindRestUrl = localhost:8080/integral-mystic/rest/services
 	
-	/*
+	
         $integralUrl = $this->config['IntegralMystic']['vufindRestUrl'];        
 	$urlParams = "http://".$integralUrl."/accession/".$id."/holding";
 	$holding = $this->getJsonArray($urlParams);
         $this->debug($urlParams);
 	$this->debug(var_dump($holding));
-        */
+        
 
 
 
