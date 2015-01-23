@@ -399,7 +399,7 @@ class Integral extends AbstractBase implements LoggerAwareInterface, \VuFindHttp
 	$urlParams = "http://".$integralUrl."/accession/".$id."/holding";
 	$holding = $this->getJsonArray($urlParams);
         $this->debug($urlParams);
-	$this->debug(var_dump($holding));
+	//$this->debug(var_dump($holding));
         
 
 
